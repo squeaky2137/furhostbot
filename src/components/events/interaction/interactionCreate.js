@@ -9,7 +9,7 @@ module.exports = {
       } catch (error) {
         console.log(error);
       }
-    } else if (interaction.isChatInputCommand()) {
+    } else if (interaction.isChatInputCommand() || interaction.isAutocomplete()) {
       const command = client.commands.get(interaction.commandName);
       if (!command) return;
       try {

@@ -1,0 +1,47 @@
+# The Token For The Discord Bot
+token: "TOKEN HERE"
+
+# Valid Documentation urls that can be used
+
+urls:
+  bob:
+    url: "https://billing.example.com"
+    description: "Access to the billing page"
+  discord:
+    url: "https://discord.example.com"
+    description: "How to join the discord server?"
+  forums:
+    url: "https://forums.example.com"
+    description: "How to join the forums?"
+  store:
+    url: "https://store.example.com"
+    description: "How to join the store?"
+
+# Embed Configuration
+
+# Valid Variables
+# %urlname% - The Name Of The Url (billing, discord, forums, store)
+# %url% - The Url Of The Url (https://billing.example.com)
+# %description% - How to join the discord server?
+
+
+#Example Embed:
+#  color: "#800080"
+#  footer: "Example Footer" # Optional
+#  footerIcon: "https://cdn" # Optional
+#  authorName: "Example Author" # Optional
+#  authorIcon: "https://cdn" # Optional
+#  title: "**[%description%]**" # Optional
+#  description: "**[%description%](%url%)**" # Optional
+#  titleUrl: "%url%" # Optional
+
+embed:
+  color: "#800080"
+  footer: "Example Footer"
+  authorName: "example author"
+  authorIcon: "https://cdn.discordapp.com/embed/avatars/2.png"
+  title: "%description%"
+  titleUrl: "%url%"
+
+
+

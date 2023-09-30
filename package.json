@@ -1,7 +1,7 @@
 {
-  "name": "repoName",
+  "name": "furbot",
   "version": "1.0.0",
-  "description": "repoDesc",
+  "description": "Discord bot for FurHost",
   "main": "index.js",
   "scripts": {
     "start": "node ."
@@ -10,8 +10,8 @@
   "author": "squeaky2137",
   "license": "MIT",
   "dependencies": {
-      "discord.js": "^14.7.1",
-      "dotenv": "^16.0.3",
-      "glob": "^8.0.3"
+    "discord.js": "^14.7.1",
+    "glob": "^8.0.3",
+    "yaml": "^2.3.2"
   }
 }

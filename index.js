@@ -1,10 +1,16 @@
-require("dotenv").config();
-const { Client, Collection, Partials } = require("discord.js");
+const { Client, Collection } = require("discord.js");
 
 const client = new Client({
   intents: ["Guilds", "GuildMembers", "GuildMessages", "MessageContent"],
 });
-const token = process.env.TOKEN;
+
+const yaml = require("yaml");
+const fs = require("fs");
+
+
+const configFile = fs.readFileSync("./config.yml", "utf8");
+client.config = yaml.parse(configFile);
+console.clear();
 
 
 const { loadButtons } = require("./src/handlers/buttonHandler.js");
@@ -28,6 +34,6 @@ client.selectMenus = new Collection();
 }) ();
 
 
-client.login(token).then(async () => {
+client.login(client.config.token).then(async () => {
   await loadCommands(client);
 });
