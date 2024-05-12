@@ -11,6 +11,9 @@ async function loadCommands(client) {
 
   Files.forEach((file) => {
     const command = require(file);
+    if(command.data.name === "docs") {
+      command.data.setName(client.config.DocumentationCommand)
+    }
     client.commands.set(command.data.name, command);
 
     commandsArray.push(command.data.toJSON());

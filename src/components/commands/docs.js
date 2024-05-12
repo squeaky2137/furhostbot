@@ -1,4 +1,4 @@
-const {SlashCommandBuilder, EmbedBuilder} = require("discord.js");
+const {SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ActionRowBuilder} = require("discord.js");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("docs")
@@ -64,10 +64,16 @@ module.exports = {
                         .replaceAll("%description%", page.description))
                 }
 
-                interaction.reply({embeds: [embed]});
+                const button = new ButtonBuilder()
+                    .setStyle(5)
+                    .setLabel(client.config.embed.buttonText || "View Documentation")
+                    .setURL(page.url);
+
+                interaction.reply({embeds: [embed], components: [new ActionRowBuilder().addComponents(button)]});
             }
         }  catch (error) {
-            await interaction.editReply({
+            console.log(error);
+            await interaction.reply({
                 content: ["**Error**", `\`\`\`js\n${error}\`\`\``].join("\n"),
                 ephemeral: true,
             });

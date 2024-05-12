@@ -1,6 +1,10 @@
 # The Token For The Discord Bot
 token: "TOKEN HERE"
 
+#Command Name
+DocumentationCommand: "trololol"
+
+
 # Valid Documentation urls that can be used
 
 urls:
@@ -34,6 +38,7 @@ urls:
 #  title: "**[%description%]**" # Optional
 #  description: "**[%description%](%url%)**" # Optional
 #  titleUrl: "%url%" # Optional
+#  buttonText: "Documentation" # Optional
 
 embed:
   color: "#800080"
@@ -42,6 +47,7 @@ embed:
   authorIcon: "https://cdn.discordapp.com/embed/avatars/2.png"
   title: "%description%"
   titleUrl: "%url%"
+  buttonText: "Documentation"
 
 
 
